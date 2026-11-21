@@ -1,0 +1,32 @@
+hooks:
+  before_tasks:
+    - extension: speckit-checklist
+      command: speckit.checklist
+      description: Revisar a especificacao e o plano antes da decomposicao em tarefas.
+      prompt: Gere ou revise a checklist de qualidade da feature atual antes de criar tasks.md.
+      optional: true
+      enabled: true
+
+  after_tasks:
+    - extension: speckit-analyze
+      command: speckit.analyze
+      description: Verificar consistencia entre constituicao, especificacao, plano e tarefas.
+      prompt: Analise tasks.md contra a constituicao, a especificacao e o plano desta feature.
+      optional: false
+      enabled: true
+
+  before_implement:
+    - extension: speckit-analyze
+      command: speckit.analyze
+      description: Verifica inconsistencias entre constituicao, especificacao, plano e tarefas antes da implementacao.
+      prompt: Execute a analise de consistencia dos artefatos Spec Kit desta feature.
+      optional: false
+      enabled: true
+
+  after_implement:
+    - extension: speckit-converge
+      command: speckit.converge
+      description: Compara o resultado implementado com especificacao, plano e tarefas.
+      prompt: Execute a convergencia da feature e adicione lacunas reais como tarefas.
+      optional: false
+      enabled: true

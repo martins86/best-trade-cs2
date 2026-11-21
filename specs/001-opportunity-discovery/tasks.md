@@ -17,9 +17,9 @@ description: "Task list for simulated opportunity discovery"
 
 **Purpose**: Criar e configurar o projeto Angular necessário para a feature.
 
-- [ ] T001 Inicializar a aplicação Angular 22 standalone com roteamento e estilos SCSS em `frontend/package.json` e `frontend/angular.json`.
-- [ ] T002 Instalar Angular Material 22, Decimal.js e configurar Vitest com utilitários de teste Angular em `frontend/package.json`, `frontend/angular.json` e `frontend/src/test.ts` (depende de T001).
-- [ ] T003 Instalar Playwright e configurar execução E2E com servidor local em `frontend/package.json` e `frontend/playwright.config.ts` (depende de T002).
+- [X] T001 Inicializar a aplicação Angular 22 standalone com roteamento e estilos SCSS em `frontend/package.json` e `frontend/angular.json`.
+- [X] T002 Instalar Angular Material 22, Decimal.js e configurar Vitest com utilitários de teste Angular em `frontend/package.json`, `frontend/angular.json` e `frontend/src/test.ts` (depende de T001).
+- [X] T003 Instalar Playwright e configurar execução E2E com servidor local em `frontend/package.json` e `frontend/playwright.config.ts` (depende de T002).
 
 ---
 
@@ -27,11 +27,11 @@ description: "Task list for simulated opportunity discovery"
 
 **Purpose**: Definir os tipos de domínio compartilhados por todas as histórias. Todas as tarefas desta fase devem terminar antes das histórias.
 
-- [ ] T004 Definir tipos compartilhados de marketplace, moeda, direção, categoria de liquidez, estado de dados e tipo de valor recebido em `frontend/src/app/features/opportunities/domain/opportunity-types.ts` (depende de T001).
-- [ ] T005 [P] Definir `SkinIdentity` e `Sticker` em `frontend/src/app/features/opportunities/domain/skin-identity.model.ts`, respeitando `data-model.md`: `SkinIdentity.id`, `SkinIdentity.marketHashName`, `SkinIdentity.category`, `SkinIdentity.wear`, `SkinIdentity.statTrak`, `SkinIdentity.souvenir`, `SkinIdentity.floatValue`, `SkinIdentity.paintSeed`, `SkinIdentity.stickers`, `SkinIdentity.specialAttributes`, `Sticker.name` e `Sticker.slot` (depende de T004).
-- [ ] T006 [P] Definir `PriceReference` e `FeeCost` em `frontend/src/app/features/opportunities/domain/price-reference.model.ts`, respeitando `data-model.md`: `PriceReference.id`, `PriceReference.skinIdentityId`, `PriceReference.marketplace`, `PriceReference.price`, `PriceReference.currency`, `PriceReference.collectedAt`, `PriceReference.volume24h`, `PriceReference.salesFrequency`, `PriceReference.spreadPercent`, `PriceReference.activeListings`, `PriceReference.fees`, `FeeCost.kind`, `FeeCost.amount`, `FeeCost.currency`, `FeeCost.label` e `FeeCost.appliesTo` (depende de T004).
-- [ ] T007 [P] Definir `FxQuote` em `frontend/src/app/features/opportunities/domain/fx-quote.model.ts`, respeitando `data-model.md`: `FxQuote.baseCurrency`, `FxQuote.quoteCurrency`, `FxQuote.rate` e `FxQuote.referenceTime` (depende de T004).
-- [ ] T008 Definir `OpportunityScenario` e estados derivados em `frontend/src/app/features/opportunities/domain/opportunity-scenario.model.ts`, respeitando `data-model.md`: `OpportunityScenario.skinIdentityId`, `OpportunityScenario.direction`, `OpportunityScenario.buyReferenceId`, `OpportunityScenario.sellReferenceId`, `OpportunityScenario.status`, `OpportunityScenario.liquidityCategory`, `OpportunityScenario.costBasisBrl`, `OpportunityScenario.netProceedsBrl`, `OpportunityScenario.netResultBrl`, `OpportunityScenario.marginPercent`, `OpportunityScenario.proceedsKind` e `OpportunityScenario.dataReferenceTime` (depende de T004–T007).
+- [X] T004 Definir tipos compartilhados de marketplace, moeda, direção, categoria de liquidez, estado de dados e tipo de valor recebido em `frontend/src/app/features/opportunities/domain/opportunity-types.ts` (depende de T001).
+- [X] T005 [P] Definir `SkinIdentity` e `Sticker` em `frontend/src/app/features/opportunities/domain/skin-identity.model.ts`, respeitando `data-model.md`: `SkinIdentity.id`, `SkinIdentity.marketHashName`, `SkinIdentity.category`, `SkinIdentity.wear`, `SkinIdentity.statTrak`, `SkinIdentity.souvenir`, `SkinIdentity.floatValue`, `SkinIdentity.paintSeed`, `SkinIdentity.stickers`, `SkinIdentity.specialAttributes`, `Sticker.name` e `Sticker.slot` (depende de T004).
+- [X] T006 [P] Definir `PriceReference` e `FeeCost` em `frontend/src/app/features/opportunities/domain/price-reference.model.ts`, respeitando `data-model.md`: `PriceReference.id`, `PriceReference.skinIdentityId`, `PriceReference.marketplace`, `PriceReference.price`, `PriceReference.currency`, `PriceReference.collectedAt`, `PriceReference.volume24h`, `PriceReference.salesFrequency`, `PriceReference.spreadPercent`, `PriceReference.activeListings`, `PriceReference.fees`, `FeeCost.kind`, `FeeCost.amount`, `FeeCost.currency`, `FeeCost.label` e `FeeCost.appliesTo` (depende de T004).
+- [X] T007 [P] Definir `FxQuote` em `frontend/src/app/features/opportunities/domain/fx-quote.model.ts`, respeitando `data-model.md`: `FxQuote.baseCurrency`, `FxQuote.quoteCurrency`, `FxQuote.rate` e `FxQuote.referenceTime` (depende de T004).
+- [X] T008 Definir `OpportunityScenario` e estados derivados em `frontend/src/app/features/opportunities/domain/opportunity-scenario.model.ts`, respeitando `data-model.md`: `OpportunityScenario.skinIdentityId`, `OpportunityScenario.direction`, `OpportunityScenario.buyReferenceId`, `OpportunityScenario.sellReferenceId`, `OpportunityScenario.status`, `OpportunityScenario.liquidityCategory`, `OpportunityScenario.costBasisBrl`, `OpportunityScenario.netProceedsBrl`, `OpportunityScenario.netResultBrl`, `OpportunityScenario.marginPercent`, `OpportunityScenario.proceedsKind` e `OpportunityScenario.dataReferenceTime` (depende de T004–T007).
 
 **Checkpoint**: Projeto, testes e tipos canônicos estão disponíveis; ainda não há telas ou regras específicas das histórias.
 
@@ -45,15 +45,15 @@ description: "Task list for simulated opportunity discovery"
 
 ### Tests for User Story 1
 
-- [ ] T009 [P] [US1] Escrever testes de equivalência e validade temporal, incluindo floats numericamente iguais com zeros finais diferentes, floats divergentes, stickers em ordens diferentes ou com slot divergente, atributos opcionais e limite de 24 horas, em `frontend/src/app/features/opportunities/domain/opportunity-builder.spec.ts`.
+- [X] T009 [P] [US1] Escrever testes de equivalência e validade temporal, incluindo floats numericamente iguais com zeros finais diferentes, floats divergentes, stickers em ordens diferentes ou com slot divergente, atributos opcionais e limite de 24 horas, em `frontend/src/app/features/opportunities/domain/opportunity-builder.spec.ts`.
 - [ ] T010 [P] [US1] Escrever testes da lista para resultados positivos, nulos, negativos, desatualizados, incompletos e vazios em `frontend/src/app/features/opportunities/pages/opportunity-list.page.spec.ts`.
 
 ### Implementation for User Story 1
 
-- [ ] T011 [US1] Criar fixtures estáticas com skins equivalentes e divergentes, preços nos dois marketplaces, moedas, custos, cotações, horários, sinais de liquidez e categorias baixa/média/alta, incluindo uma comparação com margem mínima de 3% e liquidez média/alta para SC-005, em `frontend/src/app/features/opportunities/data/opportunity.fixtures.ts`.
-- [ ] T012 [P] [US1] Implementar funções puras para equivalência de itens usando as regras de `data-model.md` para `SkinIdentity.floatValue`, `SkinIdentity.stickers`, `SkinIdentity.specialAttributes`, `Sticker.name` e `Sticker.slot`, validade de referências, estado do cenário e composição das oportunidades nos dois sentidos em `frontend/src/app/features/opportunities/domain/opportunity-builder.ts` (depende de T011).
-- [ ] T013 [P] [US1] Implementar acesso local tipado às fixtures e ao horário de referência fixo do conjunto em `frontend/src/app/features/opportunities/data/opportunity-mock.repository.ts` (depende de T011).
-- [ ] T014 [US1] Implementar página e componente da lista com origem/horário simulados, resultados não lucrativos, categoria de liquidez, dados incompletos, stale e estado vazio em `frontend/src/app/features/opportunities/pages/opportunity-list.page.ts` e `frontend/src/app/features/opportunities/ui/opportunity-list/opportunity-list.component.ts` (depende de T009–T013).
+- [X] T011 [US1] Criar fixtures estáticas com skins equivalentes e divergentes, preços nos dois marketplaces, moedas, custos, cotações, horários, sinais de liquidez e categorias baixa/média/alta, incluindo uma comparação com margem mínima de 3% e liquidez média/alta para SC-005, em `frontend/src/app/features/opportunities/data/opportunity.fixtures.ts`.
+- [X] T012 [P] [US1] Implementar funções puras para equivalência de itens usando as regras de `data-model.md` para `SkinIdentity.floatValue`, `SkinIdentity.stickers`, `SkinIdentity.specialAttributes`, `Sticker.name` e `Sticker.slot`, validade de referências, estado do cenário e composição das oportunidades nos dois sentidos em `frontend/src/app/features/opportunities/domain/opportunity-builder.ts` (depende de T011).
+- [X] T013 [P] [US1] Implementar acesso local tipado às fixtures e ao horário de referência fixo do conjunto em `frontend/src/app/features/opportunities/data/opportunity-mock.repository.ts` (depende de T011).
+- [X] T014 [US1] Implementar página e componente da lista com origem/horário simulados, resultados não lucrativos, categoria de liquidez, dados incompletos, stale e estado vazio em `frontend/src/app/features/opportunities/pages/opportunity-list.page.ts` e `frontend/src/app/features/opportunities/ui/opportunity-list/opportunity-list.component.ts` (depende de T009–T013).
 
 **Checkpoint**: US1 funciona isoladamente com fixtures locais, sem requisições de rede ou ações financeiras.
 
@@ -67,13 +67,13 @@ description: "Task list for simulated opportunity discovery"
 
 ### Tests for User Story 2
 
-- [ ] T015 [P] [US2] Escrever testes de cálculo para alocação de taxas por etapa, conversão individual para BRL, resultado, margem, ausência de arredondamento intermediário, arredondamento half-up a duas casas, dados inválidos/ausentes e custo zero em `frontend/src/app/features/opportunities/domain/opportunity-calculator.spec.ts`.
+- [X] T015 [P] [US2] Escrever testes de cálculo para alocação de taxas por etapa, conversão individual para BRL, resultado, margem, ausência de arredondamento intermediário, arredondamento half-up a duas casas, dados inválidos/ausentes e custo zero em `frontend/src/app/features/opportunities/domain/opportunity-calculator.spec.ts`.
 - [ ] T016 [P] [US2] Escrever testes da apresentação detalhada para os dois sentidos, saldo Steam não sacável, resultado não lucrativo e sentido indisponível em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.spec.ts`.
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Implementar cálculo puro de custo total, valor líquido, resultado e margem usando Decimal.js e `data-model.md`: aplicar `FeeCost.appliesTo` e `FeeCost.kind`, calcular `OpportunityScenario.costBasisBrl`, `OpportunityScenario.netProceedsBrl`, `OpportunityScenario.netResultBrl` e `OpportunityScenario.marginPercent`, sem arredondar etapas intermediárias, em `frontend/src/app/features/opportunities/domain/opportunity-calculator.ts` (depende de T015).
-- [ ] T018 [US2] Implementar comparação detalhada com valores originais, taxas/custos, cotação, valores em BRL e rótulo de tipo de saldo em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.ts` e `frontend/src/app/features/opportunities/ui/opportunity-comparison/opportunity-comparison.component.ts` (depende de T012–T013 e T016–T017).
+- [X] T017 [US2] Implementar cálculo puro de custo total, valor líquido, resultado e margem usando Decimal.js e `data-model.md`: aplicar `FeeCost.appliesTo` e `FeeCost.kind`, calcular `OpportunityScenario.costBasisBrl`, `OpportunityScenario.netProceedsBrl`, `OpportunityScenario.netResultBrl` e `OpportunityScenario.marginPercent`, sem arredondar etapas intermediárias, em `frontend/src/app/features/opportunities/domain/opportunity-calculator.ts` (depende de T015).
+- [X] T018 [US2] Implementar comparação detalhada com valores originais, taxas/custos, cotação, valores em BRL e rótulo de tipo de saldo em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.ts` e `frontend/src/app/features/opportunities/ui/opportunity-comparison/opportunity-comparison.component.ts` (depende de T012–T013 e T016–T017).
 
 **Checkpoint**: US2 pode ser validada com fixtures conhecidas e mantém distintos dinheiro disponível e saldo Steam.
 
@@ -87,13 +87,13 @@ description: "Task list for simulated opportunity discovery"
 
 ### Tests for User Story 3
 
-- [ ] T019 [P] [US3] Escrever testes para busca sem distinção de caixa, limites inclusivos, filtros AND, faixa inválida, categoria mínima e ordenação por sentido em `frontend/src/app/features/opportunities/domain/opportunity-filters.spec.ts`.
+- [X] T019 [P] [US3] Escrever testes para busca sem distinção de caixa, limites inclusivos, filtros AND, faixa inválida, categoria mínima e ordenação por sentido em `frontend/src/app/features/opportunities/domain/opportunity-filters.spec.ts`.
 - [ ] T020 [P] [US3] Escrever testes dos controles de filtro, combinação, estado sem resultados e ação de limpar em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.spec.ts`.
 
 ### Implementation for User Story 3
 
-- [ ] T021 [US3] Implementar funções puras de filtragem e ordenação por resultado, margem e categoria de liquidez em `frontend/src/app/features/opportunities/domain/opportunity-filters.ts` (depende de T019; categorias seguem baixa < média < alta).
-- [ ] T022 [US3] Implementar controles de filtros e integração com a lista, incluindo validação da faixa de custo e estado sem resultados em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.ts` e `frontend/src/app/features/opportunities/pages/opportunity-list.page.ts` (depende de T020–T021 e T014).
+- [X] T021 [US3] Implementar funções puras de filtragem e ordenação por resultado, margem e categoria de liquidez em `frontend/src/app/features/opportunities/domain/opportunity-filters.ts` (depende de T019; categorias seguem baixa < média < alta).
+- [X] T022 [US3] Implementar controles de filtros e integração com a lista, incluindo validação da faixa de custo e estado sem resultados em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.ts` e `frontend/src/app/features/opportunities/pages/opportunity-list.page.ts` (depende de T020–T021 e T014).
 
 **Checkpoint**: US3 pode ser demonstrada com qualquer combinação válida e não altera as regras de cálculo ou equivalência.
 
@@ -106,7 +106,7 @@ description: "Task list for simulated opportunity discovery"
 - [ ] T023 [P] Criar cenário Playwright para lista → filtros → comparação, incluindo dados simulados, resultados não lucrativos, saldo Steam e ausência de ações financeiras em `frontend/e2e/opportunity-discovery.spec.ts` (depende de T014, T018 e T022).
 - [ ] T024 [P] Refinar acessibilidade e layout responsivo em `frontend/src/app/features/opportunities/pages/opportunity-list.page.scss`, `frontend/src/app/features/opportunities/pages/opportunity-detail.page.scss`, `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.html` e `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.scss`, cobrindo teclado, foco, rótulos, contraste e viewports móvel/tablet/desktop.
 - [ ] T025 Implementar medição Playwright da atualização de filtros/ordenação para até 200 cenários e validar p95 de até 200 ms em 30 execuções, sem rede, em `frontend/e2e/opportunity-performance.spec.ts` (depende de T014, T022 e T024).
-- [ ] T026 Atualizar e executar os comandos e cenários de aceitação em `specs/001-opportunity-discovery/quickstart.md`, registrando apenas instruções que funcionem com os scripts efetivamente configurados em `frontend/package.json` (depende de T023–T025).
+- [X] T026 Atualizar e executar os comandos e cenários de aceitação em `specs/001-opportunity-discovery/quickstart.md`, registrando apenas instruções que funcionem com os scripts efetivamente configurados em `frontend/package.json` (depende de T023–T025).
 - [ ] T027 Conduzir avaliação sem orientação com cinco participantes para a tarefa de filtros e registrar somente quantidade de sucessos e tempos, sem dados pessoais, em `specs/001-opportunity-discovery/quickstart.md`; o critério é pelo menos quatro conclusões em até dois minutos (depende de T026).
 
 ---

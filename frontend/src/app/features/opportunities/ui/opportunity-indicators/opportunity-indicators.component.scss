@@ -1,0 +1,5 @@
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-bottom: 16px; }
+mat-card { min-height: 116px; padding: 16px 18px; background: var(--app-surface); border: 1px solid var(--app-border); border-radius: 12px; color: var(--app-text); box-shadow: none; }
+mat-card p { margin: 0; color: var(--app-muted); font-size: 12px; } mat-card strong { display: block; margin-top: 12px; font-size: 24px; } mat-card small { display: block; margin-top: 6px; color: var(--app-muted); font-size: 10px; }.positive{color:var(--app-success)}.negative{color:var(--app-danger)}
+@media (max-width: 900px) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .metrics { gap: 9px; }.metrics mat-card { min-height: 104px; padding: 13px; }mat-card strong{font-size:20px} }

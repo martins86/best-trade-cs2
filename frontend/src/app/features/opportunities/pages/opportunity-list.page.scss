@@ -1,0 +1,11 @@
+.page-shell { max-width: 1600px; margin: 0 auto; }
+.topbar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
+.topbar h1 { margin: 4px 0 0; font-size: 25px; letter-spacing: -0.7px; }
+.eyebrow { display: none; }.simulation-badge { display: inline-flex; align-items: center; min-height: 32px; padding: 7px 10px; border: 1px solid var(--app-border); border-radius: 8px; background: var(--app-surface); color: var(--app-muted); font-size: 11px; }
+.filters { display: grid; grid-template-columns: 2fr repeat(6, 1fr) auto; gap: 10px; align-items: end; margin-bottom: 10px; }
+.filters label { display: grid; gap: 6px; color: var(--app-muted); font-size: 11px; font-weight: 650; }
+.filters input, .filters select { width: 100%; min-height: 40px; border: 1px solid var(--app-border); border-radius: 8px; background: var(--app-input); color: var(--app-text); padding: 8px 10px; }
+.clear-button { min-height: 40px; border: 1px solid var(--app-border); border-radius: 8px; background: var(--app-surface); color: var(--app-text); padding: 8px 12px; cursor: pointer; }
+.dataset-time { margin: 4px 0 12px; color: var(--app-muted); font-size: 11px; }.range-error{margin:8px 0;color:var(--app-danger);font-size:12px;font-weight:700}
+@media (max-width: 900px) { .filters { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .topbar { align-items: center; }.topbar h1{font-size:22px}.filters { grid-template-columns: 1fr; }.simulation-badge{font-size:10px} }

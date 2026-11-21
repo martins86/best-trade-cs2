@@ -1,50 +1,60 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+Version change: unversioned template -> 1.0.0 (initial constitution)
+Modified principles: none; this is the initial ratification
+Added principles:
+- Desenvolvimento orientado a especificações
+- Transparência dos dados simulados
+- Confiabilidade dos cálculos
+- Qualidade verificável e acessibilidade
+- Simplicidade e evolução gradual
+Added sections:
+- Restrições e escopo do MVP
+- Fluxo de desenvolvimento
+Removed sections: none
+Follow-up TODO: confirm the formal ratification date
+Remove this temporary report before committing the constitution.
+-->
+
+# Best Trade CS2 Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Desenvolvimento orientado a especificações
+Toda funcionalidade MUST ter uma especificação aprovada antes da implementação. O plano e as tarefas MUST permanecer consistentes com essa especificação, e mudanças de escopo MUST atualizar os artefatos antes de alterar o código. Isso mantém requisitos, decisões e implementação rastreáveis.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Transparência dos dados simulados
+Durante o MVP, preços, taxas, câmbio, volume, liquidez e horários fornecidos por dados mocados MUST ser identificados como simulados na interface. O produto MUST NOT apresentar esses valores como dados atuais de mercado, oportunidade executável ou garantia de lucro. Essa distinção evita induzir decisões financeiras com informações fictícias.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Confiabilidade dos cálculos
+Regras de taxas, conversão, lucro líquido e margem MUST ser explícitas e testáveis. Cálculos financeiros MUST evitar erros de ponto flutuante binário, usando representação decimal adequada ou unidades inteiras quando aplicável. A interface MUST permitir compreender os valores e premissas que compõem cada estimativa.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Qualidade verificável e acessibilidade
+Critérios de aceitação MUST ser verificáveis. Cálculos e filtros críticos MUST ter testes automatizados; fluxos de interface MUST ser validados nos estados relevantes, incluindo dados vazios ou incompletos. A interface MUST ser responsiva, navegável por teclado e construída com práticas de acessibilidade compatíveis com os componentes utilizados.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicidade e evolução gradual
+Cada incremento MUST implementar somente o escopo aprovado para sua funcionalidade. O MVP MUST permanecer no front-end com dados mocados: integrações reais, backend, persistência, autenticação e operações financeiras ficam fora do escopo até serem especificados como uma fase futura. Abstrações destinadas apenas à evolução futura MUST NOT ser introduzidas antes de serem necessárias ao comportamento atual ou justificadas no plano.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Restrições e escopo do MVP
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+- O MVP valida a experiência de descoberta e comparação de oportunidades simuladas para skins de CS2.
+- A aplicação não consulta Steam, CSFloat ou provedores de câmbio e não executa compras, vendas ou saques.
+- A arquitetura de front-end proposta no documento de visão do produto é a referência inicial; decisões específicas de tecnologia e estrutura MUST ser justificadas no plano da funcionalidade.
+- Saldo Steam MUST NOT ser descrito como dinheiro sacável. Qualquer cenário que mostre saldo ou conversão deve explicitar suas premissas.
+- A visão de longo prazo não amplia automaticamente o escopo do MVP. Funcionalidades futuras exigem especificação e planejamento próprios.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Fluxo de desenvolvimento
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Cada funcionalidade segue o fluxo Spec Kit: Specify, Clarify quando houver ambiguidades, Plan, Checklist, Tasks, Analyze, Implement e Converge.
+- Antes de implementar, os responsáveis MUST revisar a especificação, o plano e as tarefas para confirmar escopo, dependências e critérios de aceitação.
+- Tarefas MUST ser pequenas, ordenadas por dependência e associadas a uma forma de validação.
+- Após cada incremento, os testes e verificações pertinentes MUST ser executados. Falhas e lacunas de requisitos MUST ser resolvidas antes de declarar a funcionalidade concluída.
+- Decisões que alterem comportamento ou escopo MUST ser registradas nos artefatos Spec Kit correspondentes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Esta constituição orienta as decisões do projeto e prevalece quando houver conflito com práticas locais. Uma alteração de princípio ou restrição exige atualização desta constituição e revisão dos artefatos afetados. A conformidade MUST ser verificada durante Analyze, Converge e revisões de implementação.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Alterações desta constituição devem registrar sua justificativa e seguir versionamento semântico: MAJOR para remoção ou mudança incompatível de princípios; MINOR para novos princípios ou expansão material das regras; PATCH para esclarecimentos sem mudança semântica.
+
+**Version**: 1.0.0 | **Ratified**: TODO(RATIFICATION_DATE): confirmar a data formal de adoção | **Last Amended**: 2026-11-21

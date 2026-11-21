@@ -1,0 +1,86 @@
+name: CI/CD
+
+on:
+  pull_request:
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.html'
+      - '**.scss'
+      - '**.json'
+      - '**.yml'
+    branches: [master]
+  push:
+    paths:
+      - '**.js'
+      - '**.ts'
+      - '**.html'
+      - '**.scss'
+      - '**.json'
+      - '**.yml'
+    branches: [master]
+  schedule:
+    - cron: '0 9 * * 1,2,3,4,5'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefix frontend
+
+      - name: Build app
+        run: npm run build --prefix frontend -- --base-href /best-trade-cs2/
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist/frontend/browser
+
+  test-unit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefix frontend
+
+      - name: Test unit
+        run: npm test --prefix frontend
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: [build, test-unit]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

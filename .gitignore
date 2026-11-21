@@ -1,0 +1,13 @@
+node_modules/
+dist/
+build/
+coverage/
+.angular/cache/
+*.log
+.env*
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/

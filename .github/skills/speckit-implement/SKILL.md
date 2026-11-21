@@ -19,6 +19,11 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Pre-Execution Checks
 
+**Spec approval gate (mandatory)**:
+- Before implementation, run `.specify/scripts/bash/validate-spec-approved.sh` from the repository root.
+- If it exits non-zero, stop the workflow. Do not edit application code, tests, or mark implementation tasks complete. The user may continue editing specification artifacts, then must set the active spec status to `Approved` after review and rerun implementation.
+- This explicit check supplements the workspace `PreToolUse` hook in `.github/hooks/spec-approval.json`.
+
 **Check for extension hooks (before implementation)**:
 - Check if `.specify/extensions.yml` exists in the project root.
 - If it exists, read it and look for entries under the `hooks.before_implement` key

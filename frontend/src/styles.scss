@@ -1,0 +1,79 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --app-bg: #f5f6f8;
+  --app-sidebar: #ffffff;
+  --app-surface: #ffffff;
+  --app-surface-2: #f0f1f5;
+  --app-border: #e5e7ed;
+  --app-text: #20242c;
+  --app-muted: #737b87;
+  --app-subtle: #9299a5;
+  --app-input: #f8f9fb;
+  --app-success: #16855d;
+  --app-danger: #b84a55;
+  --app-warning: #b17a16;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --app-bg: #111318;
+  --app-sidebar: #171a20;
+  --app-surface: #1d222b;
+  --app-surface-2: #242a35;
+  --app-border: #303641;
+  --app-text: #f1f3f5;
+  --app-muted: #9aa2af;
+  --app-subtle: #747d8c;
+  --app-input: #171b23;
+  --app-success: #35c995;
+  --app-danger: #e66b75;
+  --app-warning: #e5b65c;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin: 0; min-width: 320px; background: var(--app-bg); color: var(--app-text); }
+button, input, select { font: inherit; }
+mat-icon, .mat-icon { font-family: 'Material Icons' !important; }
+.opportunity-detail-dialog-panel .mat-mdc-dialog-surface {
+  background: var(--app-surface);
+  color: var(--app-text);
+}
+.cdk-overlay-backdrop.opportunity-detail-backdrop.cdk-overlay-backdrop-showing {
+  background: rgba(0, 0, 0, 0.62);
+  opacity: 1;
+}
+:root[data-theme="dark"] mat-toolbar,
+:root[data-theme="dark"] mat-sidenav,
+:root[data-theme="dark"] mat-sidenav-content,
+:root[data-theme="dark"] mat-card,
+:root[data-theme="dark"] mat-table,
+:root[data-theme="dark"] mat-row,
+:root[data-theme="dark"] mat-cell,
+:root[data-theme="dark"] mat-header-row,
+:root[data-theme="dark"] mat-header-cell,
+:root[data-theme="dark"] mat-select,
+:root[data-theme="dark"] mat-form-field { color: var(--app-text); }
+:root[data-theme="dark"] mat-cell,
+:root[data-theme="dark"] mat-header-cell,
+:root[data-theme="dark"] mat-cell strong,
+:root[data-theme="dark"] mat-cell small,
+:root[data-theme="dark"] mat-cell a,
+:root[data-theme="dark"] .table-card,
+:root[data-theme="dark"] .table-card td,
+:root[data-theme="dark"] .detail-shell,
+:root[data-theme="dark"] .comparison,
+:root[data-theme="dark"] mat-card p,
+:root[data-theme="dark"] mat-card strong,
+:root[data-theme="dark"] mat-card small { color: var(--app-text); }
+button, a, input, select { outline-offset: 3px; }
+:root[data-theme="dark"] .filters label,
+:root[data-theme="dark"] .dataset-time,
+:root[data-theme="dark"] .table-toolbar p,
+:root[data-theme="dark"] .subtitle,
+:root[data-theme="dark"] .back-link { color: var(--app-muted); }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #7665ea; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+

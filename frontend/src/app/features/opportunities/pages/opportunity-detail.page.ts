@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { OpportunityMockRepository } from '../data/opportunity-mock.repository';
 import { isReferenceValid, getLiquidity } from '../domain/opportunity-builder';
 import { calculateOpportunity } from '../domain/opportunity-calculator';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { OpportunityComparisonComponent } from '../ui/opportunity-comparison/opportunity-comparison.component';
 import { OpportunityScenario } from '../domain/opportunity-scenario.model';
 import { PriceReference } from '../domain/price-reference.model';
@@ -11,13 +13,13 @@ import { PriceReference } from '../domain/price-reference.model';
 @Component({
   selector: 'app-opportunity-detail-page',
   standalone: true,
-  imports: [CommonModule, RouterLink, OpportunityComparisonComponent],
+  imports: [CommonModule, RouterLink, MatCardModule, MatButtonModule, OpportunityComparisonComponent],
   template: `
     <main class="detail-shell">
-      <a class="back-link" routerLink="/opportunities">← Voltar às oportunidades</a>
+      <a mat-button class="back-link" routerLink="/opportunities">← Voltar às oportunidades</a>
       <p class="eyebrow">Comparação simulada</p>
       <h1>{{ skinName }}</h1>
-      <app-opportunity-comparison [scenario]="scenario" [buy]="buy" [sell]="sell" />
+      <mat-card class="detail-card"><app-opportunity-comparison [scenario]="scenario" [buy]="buy" [sell]="sell" /></mat-card>
     </main>
   `,
   styleUrl: './opportunity-detail.page.scss',

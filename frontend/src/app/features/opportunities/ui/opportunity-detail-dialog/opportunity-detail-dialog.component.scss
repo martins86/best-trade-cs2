@@ -1,0 +1,8 @@
+:host { display: block; max-width: 920px; }
+.dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 16px 20px 8px; }
+.dialog-header p { margin: 0 0 4px; color: var(--app-muted); font-size: 12px; }
+.dialog-header h2 { margin: 0; color: var(--app-text); font-size: 20px; }
+mat-dialog-content { max-height: calc(100vh - 180px); overflow-y: auto; padding: 8px 20px 20px; }
+:host ::ng-deep .comparison { border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { :host { scroll-behavior: auto; } }
+@media (max-width: 700px) { .dialog-header { padding-inline: 14px; } mat-dialog-content { max-height: calc(100vh - 140px); padding-inline: 14px; } }

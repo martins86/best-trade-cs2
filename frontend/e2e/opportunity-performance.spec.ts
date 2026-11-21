@@ -7,7 +7,7 @@ test('filtros locais respondem dentro da meta', async ({ page }) => {
   for (let index = 0; index < 30; index += 1) {
     const start = await page.evaluate(() => performance.now());
     await select.selectOption(index % 2 === 0 ? 'medium' : '');
-    await expect(page.locator('app-opportunity-list')).toBeVisible();
+    await expect(page.locator('app-opportunity-list-page')).toBeVisible();
     durations.push((await page.evaluate(() => performance.now())) - start);
   }
   durations.sort((a, b) => a - b);

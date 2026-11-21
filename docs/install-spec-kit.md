@@ -19,5 +19,5 @@ uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1
 ```
 
 ```bash
-specify init --here --force --integration claude
+specify init --here
 ```

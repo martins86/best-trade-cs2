@@ -32,6 +32,7 @@ Os valores são informativos e não representam preços executáveis, lucro gara
 - Estados para resultados desatualizados, incompletos e sem correspondência.
 - Temas claro e escuro, com preferência persistida.
 - Layout responsivo para desktop, tablet e celular.
+- Páginas de oportunidades carregadas sob demanda por rota para reduzir o bundle inicial.
 - Dados locais em fixtures, sem chamadas a APIs externas.
 
 ## Tecnologias

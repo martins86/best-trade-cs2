@@ -4,6 +4,15 @@ import { describe, expect, it } from 'vitest';
 import { AppShellComponent } from './app-shell.component';
 
 describe('AppShellComponent', () => {
+  it('exibe a marca Best Trade CS2', () => {
+    TestBed.configureTestingModule({ imports: [AppShellComponent], providers: [provideRouter([])] });
+    const fixture = TestBed.createComponent(AppShellComponent);
+    fixture.detectChanges();
+
+    expect(fixture.nativeElement.textContent).toContain('Best Trade CS2');
+    expect(fixture.nativeElement.textContent).not.toContain('CS2 Market');
+  });
+
   it('separa destinos disponíveis e futuros', () => {
     TestBed.configureTestingModule({ imports: [AppShellComponent], providers: [provideRouter([])] });
     const fixture = TestBed.createComponent(AppShellComponent);

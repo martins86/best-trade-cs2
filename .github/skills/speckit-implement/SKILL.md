@@ -187,6 +187,23 @@ Note: This command assumes a complete task breakdown exists in tasks.md. If task
 
 ## Mandatory Post-Execution Hooks
 
+### Fechamento e controle de versao
+
+O encerramento deve seguir esta ordem:
+
+1. Executar convergencia dos artefatos contra o codigo.
+2. Executar o finalizador de versao e commit.
+
+Regras do controle de versao:
+
+- MAJOR: mudanca incompativel ou breaking change documentada.
+- MINOR: nova funcionalidade ou ajuste de produto sem quebra.
+- PATCH: correcoes, ajustes restritos ou melhorias sem nova funcionalidade.
+- Atualizar a versao em `frontend/package.json` e no primeiro bloco `packages[""]` de `frontend/package-lock.json`.
+- Executar `git add .` antes de criar o commit.
+- Criar um commit em portugues do Brasil usando Conventional Commits: `feat:`, `fix:` ou `BREAKING CHANGE:`.
+- Incluir o trailer `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>` em todas as novas mensagens de commit.
+
 **You MUST complete this section before reporting completion to the user.**
 
 Check if `.specify/extensions.yml` exists in the project root.

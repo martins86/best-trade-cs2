@@ -45,6 +45,9 @@ jobs:
       - name: Build app
         run: npm run build --prefix frontend -- --base-href /best-trade-cs2/
 
+      - name: Create GitHub Pages SPA fallback
+        run: cp frontend/dist/frontend/browser/index.html frontend/dist/frontend/browser/404.html
+
       - name: Upload GitHub Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

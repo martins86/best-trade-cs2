@@ -30,3 +30,9 @@ hooks:
       prompt: Execute a convergencia da feature e adicione lacunas reais como tarefas.
       optional: false
       enabled: true
+    - extension: speckit-finalize
+      command: speckit.finalize
+      description: Atualizar versao SemVer, adicionar todas as alteracoes e criar o commit em portugues.
+      prompt: Atualize a versao SemVer, adicione as alteracoes e crie o commit em portugues.
+      optional: false
+      enabled: true

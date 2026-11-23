@@ -13,7 +13,7 @@ test('shell, tema e tabela do refactor', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 760 });
   await expect(page.getByRole('button', { name: 'Abrir navegação' })).toBeVisible();
   await page.getByRole('button', { name: 'Abrir navegação' }).click();
-  await expect(page.getByText('CS2 Market')).toBeVisible();
+  await expect(page.locator('.brand').getByText('Best Trade CS2')).toBeVisible();
 
   const navigationIcon = page.getByRole('link', { name: 'Oportunidades' }).locator('mat-icon');
   await expect(navigationIcon).toBeVisible();

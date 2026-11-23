@@ -17,7 +17,7 @@ As regras sao:
 - MAJOR para quebra incompativel.
 - MINOR para nova funcionalidade sem quebra.
 - PATCH para correcoes e ajustes.
-- Atualizar `frontend/package.json`.
+- Atualizar `frontend/package.json` e o primeiro bloco `packages[""]` de `frontend/package-lock.json`.
 - Executar `git add .`.
 - Criar commit Conventional Commits em portugues do Brasil.
 - Incluir o trailer Copilot.

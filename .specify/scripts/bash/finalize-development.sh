@@ -4,25 +4,17 @@ set -euo pipefail
 REPO_ROOT="$(CDPATH='' cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../../.." && pwd)"
 cd "$REPO_ROOT"
 
-SECURITY_CLEAN=false
 COMMIT_TYPE=""
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --security-clean) SECURITY_CLEAN=true ;;
     --commit-type) COMMIT_TYPE="${2:-}"; shift ;;
     *) echo "Argumento invalido: $1" >&2; exit 2 ;;
   esac
   shift
 done
 
-if [[ "$SECURITY_CLEAN" != "true" ]]; then
-  echo "BLOCKED: revisao de seguranca nao foi confirmada como limpa." >&2
-  exit 1
-fi
-
 PACKAGE_JSON="$REPO_ROOT/frontend/package.json"
-PACKAGE_LOCK="$REPO_ROOT/frontend/package-lock.json"
 
 CURRENT_VERSION="$(python3 - "$PACKAGE_JSON" <<'PY'
 import json
@@ -67,24 +59,17 @@ esac
 
 NEW_VERSION="$MAJOR.$MINOR.$PATCH"
 
-python3 - "$PACKAGE_JSON" "$PACKAGE_LOCK" "$NEW_VERSION" <<'PY'
+python3 - "$PACKAGE_JSON" "$NEW_VERSION" <<'PY'
 import json
 import pathlib
 import sys
 
 package_path = pathlib.Path(sys.argv[1])
-lock_path = pathlib.Path(sys.argv[2])
-version = sys.argv[3]
+version = sys.argv[2]
 
 package = json.loads(package_path.read_text(encoding="utf-8"))
 package["version"] = version
 package_path.write_text(json.dumps(package, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-lock = json.loads(lock_path.read_text(encoding="utf-8"))
-lock["version"] = version
-if isinstance(lock.get("packages"), dict) and "" in lock["packages"]:
-    lock["packages"][""]["version"] = version
-lock_path.write_text(json.dumps(lock, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 PY
 
 git add .

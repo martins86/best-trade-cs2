@@ -46,6 +46,10 @@ Cada incremento MUST implementar somente o escopo aprovado para sua funcionalida
 ## Fluxo de desenvolvimento
 
 - Cada funcionalidade segue o fluxo Spec Kit: Specify, Clarify quando houver ambiguidades, Plan, Checklist, Tasks, Analyze, Implement e Converge.
+- Antes do encerramento, uma revisao de seguranca MUST validar o estado final da implementacao e de qualquer codigo pre-existente relevante.
+- Vulnerabilidades acionaveis MUST bloquear o incremento de versao e o commit ate serem corrigidas ou formalmente aceitas pela responsabilidade do projeto.
+- Se a revisao de seguranca estiver limpa, o incremento SemVer MUST ser aplicado ao pacote da aplicacao e todas as alteracoes MUST ser adicionadas ao indice antes do commit.
+- O commit final MUST seguir Conventional Commits em portugues do Brasil e incluir o trailer de autoria obrigatorio configurado pelo projeto.
 - Antes de implementar, os responsáveis MUST revisar a especificação, o plano e as tarefas para confirmar escopo, dependências e critérios de aceitação.
 - Tarefas MUST ser pequenas, ordenadas por dependência e associadas a uma forma de validação.
 - Após cada incremento, os testes e verificações pertinentes MUST ser executados. Falhas e lacunas de requisitos MUST ser resolvidas antes de declarar a funcionalidade concluída.

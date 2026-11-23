@@ -187,6 +187,25 @@ Note: This command assumes a complete task breakdown exists in tasks.md. If task
 
 ## Mandatory Post-Execution Hooks
 
+### Fechamento obrigatorio em tres etapas
+
+O encerramento deve seguir esta ordem:
+
+1. Executar convergencia dos artefatos contra o codigo.
+2. Executar revisao de seguranca sobre o estado final. Se houver vulnerabilidade acionavel, interromper antes do versionamento e do commit.
+3. Apenas com revisao limpa, executar o finalizador de versao e commit.
+
+Regras do controle de versao:
+
+- MAJOR: mudanca incompativel ou breaking change documentada.
+- MINOR: nova funcionalidade ou ajuste de produto sem quebra.
+- PATCH: correcoes, ajustes restritos ou melhorias sem nova funcionalidade.
+- Atualizar a versao em `frontend/package.json` e no primeiro bloco `packages[""]` de `frontend/package-lock.json`.
+- Executar `git add .` somente apos a revisao limpa.
+- Criar um commit em portugues do Brasil usando Conventional Commits: `feat:`, `fix:` ou `BREAKING CHANGE:`.
+- Incluir o trailer `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>` em todas as novas mensagens de commit.
+- Nunca versionar ou commitar quando houver vulnerabilidade acionavel; registrar a pendencia e aguardar correcoes.
+
 **You MUST complete this section before reporting completion to the user.**
 
 Check if `.specify/extensions.yml` exists in the project root.

@@ -30,3 +30,15 @@ hooks:
       prompt: Execute a convergencia da feature e adicione lacunas reais como tarefas.
       optional: false
       enabled: true
+    - extension: speckit-security-review
+      command: speckit.security-review
+      description: Revisar riscos de seguranca no estado final da feature.
+      prompt: Execute a revisao de seguranca do estado atual e bloqueie o encerramento se encontrar vulnerabilidades acionaveis.
+      optional: false
+      enabled: true
+    - extension: speckit-finalize
+      command: speckit.finalize
+      description: Atualizar versao SemVer, adicionar todas as alteracoes e criar o commit em portugues.
+      prompt: Execute o encerramento apenas quando a revisao de seguranca estiver limpa.
+      optional: false
+      enabled: true

@@ -3,17 +3,20 @@ $sidebar-width: 248px;
 :host { display: block; min-height: 100vh; }
 .shell { min-height: 100vh; background: var(--app-bg); }
 .sidebar { width: $sidebar-width; background: var(--app-sidebar); border-right: 1px solid var(--app-border); padding: 22px 14px; }
-.sidebar.compact { width: 76px; }
+.sidebar.compact { width: 76px; padding-inline: 8px; }
 .sidebar.compact .brand div, .sidebar.compact .nav-label, .sidebar.compact mat-nav-list span, .sidebar.compact mat-nav-list small, .sidebar.compact .sidebar-bottom { display: none; }
+.sidebar.compact .brand { justify-content: center; }
 .brand { display: flex; align-items: center; gap: 10px; height: 48px; margin-bottom: 20px; }
-.brand-mark { width: 38px; height: 38px; border-radius: 8px; display: grid; place-items: center; color: #fff; background: #7665ea; font-weight: 800; }
+.brand-mark { width: 42px; height: 42px; border-radius: 8px; display: grid; place-items: center; color: #fff; background: #7665ea; font-weight: 800; }
 .brand div { display: grid; }.brand strong { font-size: 14px; }.brand small { color: var(--app-muted); margin-top: 3px; font-size: 9px; letter-spacing: 1px; }
 .nav-label { color: var(--app-subtle); font-size: 10px; letter-spacing: 1px; margin: 14px 10px 8px; }
 mat-nav-list { display: grid; gap: 6px; }
 a[mat-list-item], button[mat-list-item] { min-height: 42px; border-radius: 8px; color: var(--app-muted); margin: 0; }
 :host ::ng-deep mat-nav-list .mat-mdc-list-item-unscoped-content { display: flex; align-items: center; justify-content: flex-start; gap: 8px; }
+:host ::ng-deep .sidebar.compact mat-nav-list .mat-mdc-list-item-unscoped-content { justify-content: center; gap: 0; }
 a.active { background: color-mix(in srgb, #7665ea 16%, transparent); color: var(--app-text); }
 mat-icon { width: 18px; height: 18px; margin-right: 2px; font-size: 18px; line-height: 18px; }
+.sidebar.compact mat-icon { margin-right: 0; }
 mat-nav-list small { margin-left: auto; }
 .sidebar-bottom { position: absolute; bottom: 20px; left: 24px; color: var(--app-muted); font-size: 11px; }.status-dot { display:inline-block;width:7px;height:7px;border-radius:50%;background:#35c995;margin-right:6px; }
 .topbar { height: 68px; background: color-mix(in srgb, var(--app-bg) 92%, transparent); border-bottom: 1px solid var(--app-border); color: var(--app-text); }

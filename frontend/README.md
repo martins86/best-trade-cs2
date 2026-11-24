@@ -44,6 +44,8 @@ To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use th
 ng test
 ```
 
+Coverage is enabled by default. The test command fails unless global statement, branch, function, and line coverage are each at least 95%.
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

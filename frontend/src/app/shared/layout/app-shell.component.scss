@@ -7,10 +7,10 @@ $sidebar-width: 248px;
 .sidebar.compact .brand div, .sidebar.compact .nav-label, .sidebar.compact mat-nav-list span, .sidebar.compact mat-nav-list small, .sidebar.compact .sidebar-bottom { display: none; }
 .sidebar.compact .brand { justify-content: center; }
 .brand { display: flex; align-items: center; gap: 10px; height: 48px; margin-bottom: 20px; }
-.brand-mark { width: 42px; height: 42px; border-radius: 8px; display: grid; place-items: center; color: #fff; background: #7665ea; font-weight: 800; }
+.brand-mark { width: 60px; height: 47px; border-radius: 8px; display: grid; place-items: center; color: #fff; background: #7665ea; font-weight: 800; }
 .brand div { display: grid; }.brand strong { font-size: 14px; }.brand small { color: var(--app-muted); margin-top: 3px; font-size: 9px; letter-spacing: 1px; }
 .nav-label { color: var(--app-subtle); font-size: 10px; letter-spacing: 1px; margin: 14px 10px 8px; }
-mat-nav-list { display: grid; gap: 6px; }
+mat-nav-list { display: grid; gap: 12px; }
 a[mat-list-item], button[mat-list-item] { min-height: 42px; border-radius: 8px; color: var(--app-muted); margin: 0; }
 :host ::ng-deep mat-nav-list .mat-mdc-list-item-unscoped-content { display: flex; align-items: center; justify-content: flex-start; gap: 8px; }
 :host ::ng-deep .sidebar.compact mat-nav-list .mat-mdc-list-item-unscoped-content { justify-content: center; gap: 0; }

@@ -1,15 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap, provideRouter } from '@angular/router';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { OpportunityDetailPage } from './opportunity-detail.page';
 import { OpportunityComparisonComponent } from '../ui/opportunity-comparison/opportunity-comparison.component';
+import { OpportunityMockRepository } from '../data/opportunity-mock.repository';
 
-function createDetailPage(skinId: string, direction: string): OpportunityDetailPage {
+function createDetailPage(skinId: string, direction?: string): OpportunityDetailPage {
   TestBed.configureTestingModule({
     imports: [OpportunityDetailPage],
     providers: [
       provideRouter([]),
-      { provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ skinId }), queryParamMap: convertToParamMap({ direction }) } } }
+      { provide: ActivatedRoute, useValue: { snapshot: { paramMap: convertToParamMap({ skinId }), queryParamMap: convertToParamMap(direction === undefined ? {} : { direction }) } } }
     ]
   });
   return TestBed.createComponent(OpportunityDetailPage).componentInstance;
@@ -39,6 +40,32 @@ describe('OpportunityDetailPage', () => {
 
     expect(component.buy).toBeNull();
     expect(component.sell).not.toBeNull();
+    expect(component.scenario).toBeNull();
+  });
+
+  it('usa nomes e direção padrão quando a skin não existe', () => {
+    const component = createDetailPage('unknown-skin');
+
+    expect(component.skinName).toBe('Skin simulada');
+    expect(component.direction).toBe('steam-to-csfloat');
+    expect(component.buy).toBeNull();
+    expect(component.sell).toBeNull();
+    expect(component.scenario).toBeNull();
+  });
+
+  it('não cria cenário se uma referência do par estiver desatualizada', () => {
+    const repository = new OpportunityMockRepository();
+    const references = repository.getReferences().map(reference =>
+      reference.id === 'awp-csfloat'
+        ? { ...reference, collectedAt: '2026-01-13T11:00:00Z' }
+        : reference,
+    );
+    const getReferences = vi.spyOn(OpportunityMockRepository.prototype, 'getReferences').mockReturnValue(references);
+    const component = createDetailPage('skin-awp', 'steam-to-csfloat');
+    getReferences.mockRestore();
+
+    expect(component.buy?.id).toBe('awp-steam');
+    expect(component.sell?.id).toBe('awp-csfloat');
     expect(component.scenario).toBeNull();
   });
 
@@ -72,5 +99,9 @@ describe('OpportunityDetailPage', () => {
     fixture.detectChanges();
 
     expect(fixture.nativeElement.textContent).toContain('não lucrativo');
+    const component = fixture.componentInstance;
+    expect(component.isNonProfitable(component.scenario!)).toBe(true);
+    expect(component.isNonProfitable({ ...component.scenario!, netResultBrl: '1' })).toBe(false);
+    expect(component.isNonProfitable({ ...component.scenario!, status: 'stale' })).toBe(false);
   });
 });

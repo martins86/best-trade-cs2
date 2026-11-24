@@ -99,6 +99,9 @@ Como usuário, quero combinar filtros para reduzir a lista às oportunidades que
 - **FR-013**: Quando faltarem dados necessários para identificar equivalência ou calcular um valor, o sistema MUST indicar a informação ausente e MUST NOT apresentar um cálculo como válido.
 - **FR-014**: Quando não houver oportunidades ou resultados filtrados, o sistema MUST apresentar uma mensagem de estado vazio apropriada e uma ação para limpar os filtros, quando aplicável.
 - **FR-015**: A funcionalidade MUST NOT realizar compras, vendas, saques ou conexões com contas de marketplace.
+- **FR-016**: Os estados de dados and resultados MUST usar rótulos textuais explícitos e não depender exclusivamente de cor. O conjunto MUST distinguir `Dados simulados`, `Desatualizada`, `Incompleta` e `Não lucrativo`.
+- **FR-017**: Todos os controles de busca, filtro, ordenação e comparação MUST ser operáveis por teclado, ter foco visível e preservar uma ordem de foco lógica. Estados de sucesso, alerta e erro MUST ser anunciáveis a tecnologias assistivas sem depender apenas de cor.
+- **FR-018**: A interface MUST permanecer legível e utilizável em celular, tablet e desktop. Os estados de viewport MUST cobrir até `767 px` para celular, `768 px` até `1023 px` para tablet e `1024 px` ou mais para desktop, sem exigir rolagem horizontal.
 
 ### Key Entities *(include if feature involves data)*
 

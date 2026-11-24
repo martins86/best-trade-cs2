@@ -88,7 +88,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 3
 
 - [X] T019 [P] [US3] Escrever testes para busca sem distinção de caixa, limites inclusivos, filtros AND, faixa inválida, categoria mínima e ordenação por sentido em `frontend/src/app/features/opportunities/domain/opportunity-filters.spec.ts`.
-- [ ] T020 [P] [US3] Escrever testes dos controles de filtro, combinação, estado sem resultados e ação de limpar em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.spec.ts`.
+- [X] T020 [P] [US3] Escrever testes dos controles de filtro, combinação, estado sem resultados e ação de limpar em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.spec.ts`.
 
 ### Implementation for User Story 3
 

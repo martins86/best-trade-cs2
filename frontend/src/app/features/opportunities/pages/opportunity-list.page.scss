@@ -5,6 +5,7 @@
 .filters { display: grid; grid-template-columns: 2fr repeat(6, 1fr) auto; gap: 10px; align-items: end; margin-bottom: 10px; }
 .filters label { display: grid; gap: 6px; color: var(--app-muted); font-size: 11px; font-weight: 650; }
 .filters input, .filters select { width: 100%; min-height: 40px; border: 1px solid var(--app-border); border-radius: 8px; background: var(--app-input); color: var(--app-text); padding: 8px 10px; }
+.filters input:focus-visible, .filters select:focus-visible, .clear-button:focus-visible { outline: 2px solid var(--app-primary); outline-offset: 2px; }
 .clear-button { min-height: 40px; border: 1px solid var(--app-border); border-radius: 8px; background: var(--app-surface); color: var(--app-text); padding: 8px 12px; cursor: pointer; }
 .dataset-time { margin: 4px 0 12px; color: var(--app-muted); font-size: 11px; }.range-error{margin:8px 0;color:var(--app-danger);font-size:12px;font-weight:700}
 @media (max-width: 900px) { .filters { grid-template-columns: 1fr 1fr; } }

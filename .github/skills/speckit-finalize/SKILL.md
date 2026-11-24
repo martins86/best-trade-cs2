@@ -12,6 +12,9 @@ metadata:
 
 Execute `.specify/scripts/bash/finalize-development.sh --commit-type <major|minor|patch>`.
 
+Use `--message "<descrição factual do que foi feito>"` para que a mensagem do commit descreva especificamente este incremento.
+Sem `--message`, o finalizador deriva uma descrição curta dos arquivos staged; nunca reutilize o título fixo da feature.
+
 As regras sao:
 
 - MAJOR para quebra incompativel.

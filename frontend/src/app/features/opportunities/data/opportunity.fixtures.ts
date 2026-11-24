@@ -22,3 +22,49 @@ export const references: PriceReference[] = [
 ];
 
 export const fxQuotes: FxQuote[] = [{ baseCurrency: 'USD', quoteCurrency: 'BRL', rate: '5.50', referenceTime: REFERENCE_TIME }];
+
+for (let index = 1; index <= 96; index += 1) {
+  const id = `skin-load-${index}`;
+  const steamId = `load-${index}-steam`;
+  const csfloatId = `load-${index}-csfloat`;
+  skins.push({
+    id,
+    marketHashName: `Skin de carga ${index.toString().padStart(2, '0')}`,
+    category: 'Rifle',
+    wear: 'Field-Tested',
+    statTrak: false,
+    souvenir: false,
+    floatValue: `0.${index.toString().padStart(4, '0')}`,
+    paintSeed: index,
+    stickers: null,
+    specialAttributes: [],
+  });
+  references.push(
+    {
+      id: steamId,
+      skinIdentityId: id,
+      marketplace: 'steam',
+      price: (300 + index * 10).toFixed(2),
+      currency: 'BRL',
+      collectedAt: '2026-01-15T11:30:00Z',
+      volume24h: 10 + index % 30,
+      salesFrequency: (0.4 + (index % 7) * 0.1).toFixed(2),
+      spreadPercent: (3 + (index % 5)).toFixed(1),
+      activeListings: 20 + index,
+      fees: [],
+    },
+    {
+      id: csfloatId,
+      skinIdentityId: id,
+      marketplace: 'csfloat',
+      price: (55 + index).toFixed(2),
+      currency: 'USD',
+      collectedAt: '2026-01-15T11:30:00Z',
+      volume24h: 12 + index % 25,
+      salesFrequency: (0.5 + (index % 6) * 0.1).toFixed(2),
+      spreadPercent: (2.5 + (index % 4)).toFixed(1),
+      activeListings: 18 + index,
+      fees: [],
+    },
+  );
+}

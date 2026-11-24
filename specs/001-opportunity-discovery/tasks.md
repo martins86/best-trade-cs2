@@ -46,7 +46,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 1
 
 - [X] T009 [P] [US1] Escrever testes de equivalência e validade temporal, incluindo floats numericamente iguais com zeros finais diferentes, floats divergentes, stickers em ordens diferentes ou com slot divergente, atributos opcionais e limite de 24 horas, em `frontend/src/app/features/opportunities/domain/opportunity-builder.spec.ts`.
-- [ ] T010 [P] [US1] Escrever testes da lista para resultados positivos, nulos, negativos, desatualizados, incompletos e vazios em `frontend/src/app/features/opportunities/pages/opportunity-list.page.spec.ts`.
+- [X] T010 [P] [US1] Escrever testes da lista para resultados positivos, nulos, negativos, desatualizados, incompletos e vazios em `frontend/src/app/features/opportunities/pages/opportunity-list.page.spec.ts`.
 
 ### Implementation for User Story 1
 
@@ -68,7 +68,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 2
 
 - [X] T015 [P] [US2] Escrever testes de cálculo para alocação de taxas por etapa, conversão individual para BRL, resultado, margem, ausência de arredondamento intermediário, arredondamento half-up a duas casas, dados inválidos/ausentes e custo zero em `frontend/src/app/features/opportunities/domain/opportunity-calculator.spec.ts`.
-- [ ] T016 [P] [US2] Escrever testes da apresentação detalhada para os dois sentidos, saldo Steam não sacável, resultado não lucrativo e sentido indisponível em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.spec.ts`.
+- [X] T016 [P] [US2] Escrever testes da apresentação detalhada para os dois sentidos, saldo Steam não sacável, resultado não lucrativo e sentido indisponível em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.spec.ts`.
 
 ### Implementation for User Story 2
 
@@ -88,7 +88,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 3
 
 - [X] T019 [P] [US3] Escrever testes para busca sem distinção de caixa, limites inclusivos, filtros AND, faixa inválida, categoria mínima e ordenação por sentido em `frontend/src/app/features/opportunities/domain/opportunity-filters.spec.ts`.
-- [ ] T020 [P] [US3] Escrever testes dos controles de filtro, combinação, estado sem resultados e ação de limpar em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.spec.ts`.
+- [X] T020 [P] [US3] Escrever testes dos controles de filtro, combinação, estado sem resultados e ação de limpar em `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.spec.ts`.
 
 ### Implementation for User Story 3
 
@@ -103,11 +103,11 @@ description: "Task list for simulated opportunity discovery"
 
 **Purpose**: Validar os fluxos completos e atender aos requisitos transversais da constituição.
 
-- [ ] T023 [P] Criar cenário Playwright para lista → filtros → comparação, incluindo dados simulados, resultados não lucrativos, saldo Steam e ausência de ações financeiras em `frontend/e2e/opportunity-discovery.spec.ts` (depende de T014, T018 e T022).
-- [ ] T024 [P] Refinar acessibilidade e layout responsivo em `frontend/src/app/features/opportunities/pages/opportunity-list.page.scss`, `frontend/src/app/features/opportunities/pages/opportunity-detail.page.scss`, `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.html` e `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.scss`, cobrindo teclado, foco, rótulos, contraste e viewports móvel/tablet/desktop.
-- [ ] T025 Implementar medição Playwright da atualização de filtros/ordenação para até 200 cenários e validar p95 de até 200 ms em 30 execuções, sem rede, em `frontend/e2e/opportunity-performance.spec.ts` (depende de T014, T022 e T024).
+- [X] T023 [P] Criar cenário Playwright para lista → filtros → comparação, incluindo dados simulados, resultados não lucrativos, saldo Steam e ausência de ações financeiras em `frontend/e2e/opportunity-discovery.spec.ts` (depende de T014, T018 e T022).
+- [X] T024 [P] Refinar acessibilidade e layout responsivo em `frontend/src/app/features/opportunities/pages/opportunity-list.page.scss`, `frontend/src/app/features/opportunities/pages/opportunity-detail.page.scss`, `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.html` e `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.scss`, cobrindo teclado, foco, rótulos, contraste e viewports móvel/tablet/desktop.
+- [X] T025 Implementar medição Playwright da atualização de filtros/ordenação para até 200 cenários e validar p95 de até 200 ms em 30 execuções, sem rede, em `frontend/e2e/opportunity-performance.spec.ts` (depende de T014, T022 e T024).
 - [X] T026 Atualizar e executar os comandos e cenários de aceitação em `specs/001-opportunity-discovery/quickstart.md`, registrando apenas instruções que funcionem com os scripts efetivamente configurados em `frontend/package.json` (depende de T023–T025).
-- [ ] T027 Conduzir avaliação sem orientação com cinco participantes para a tarefa de filtros e registrar somente quantidade de sucessos e tempos, sem dados pessoais, em `specs/001-opportunity-discovery/quickstart.md`; o critério é pelo menos quatro conclusões em até dois minutos (depende de T026).
+- [ ] T027 — Adiada para etapa posterior por decisão do projeto: conduzir avaliação sem orientação com cinco participantes para a tarefa de filtros e registrar somente quantidade de sucessos e tempos, sem dados pessoais, em `specs/001-opportunity-discovery/quickstart.md`; o critério continua sendo pelo menos quatro conclusões em até dois minutos (depende de T026).
 
 ---
 

@@ -48,6 +48,8 @@ Use fixtures com até 100 identidades de skins e 200 cenários direcionais. No C
 
 ## Avaliação de usabilidade
 
+**Status:** Adiada para uma etapa posterior por decisão do projeto. Não faz parte da entrega atual.
+
 Convide cinco participantes que não tenham recebido instruções sobre os controles. Apresente somente esta tarefa: “Encontre uma comparação com margem mínima de 3% e liquidez média ou alta”. Meça o tempo do início até a pessoa identificar um resultado correspondente; o critério é pelo menos quatro de cinco participantes concluírem em até dois minutos. Registre no máximo quantidade de sucessos e tempos, sem nomes ou outros dados pessoais, nesta seção.
 
 ## Resultado esperado

@@ -46,7 +46,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 1
 
 - [X] T009 [P] [US1] Escrever testes de equivalência e validade temporal, incluindo floats numericamente iguais com zeros finais diferentes, floats divergentes, stickers em ordens diferentes ou com slot divergente, atributos opcionais e limite de 24 horas, em `frontend/src/app/features/opportunities/domain/opportunity-builder.spec.ts`.
-- [ ] T010 [P] [US1] Escrever testes da lista para resultados positivos, nulos, negativos, desatualizados, incompletos e vazios em `frontend/src/app/features/opportunities/pages/opportunity-list.page.spec.ts`.
+- [X] T010 [P] [US1] Escrever testes da lista para resultados positivos, nulos, negativos, desatualizados, incompletos e vazios em `frontend/src/app/features/opportunities/pages/opportunity-list.page.spec.ts`.
 
 ### Implementation for User Story 1
 

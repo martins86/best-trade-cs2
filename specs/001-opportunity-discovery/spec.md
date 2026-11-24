@@ -4,7 +4,7 @@
 
 **Created**: 2026-11-21
 
-**Status**: Draft
+**Status**: Approved
 
 **Input**: User description: "Criar o primeiro fluxo do MVP para descobrir e comparar oportunidades simuladas de skins de CS2, com lista, comparação nas duas direções e filtros, sem dados reais de mercado."
 

@@ -16,7 +16,7 @@ import { NavigationDestination } from './layout.types';
   template: `
     <mat-sidenav-container class="shell">
       <mat-sidenav #sidenav [mode]="layout.isMobile() ? 'over' : 'side'" [opened]="!layout.isMobile()" [class.compact]="layout.isCompact()" class="sidebar">
-        <div class="brand"><span class="brand-mark">B</span><div><strong>Best Trade CS2</strong><small>MARKET INTELLIGENCE</small></div></div>
+        <div class="brand"><span class="brand-mark">CS2</span><div><strong>Best Trade CS2</strong><small>MARKET INTELLIGENCE</small></div></div>
         <nav aria-label="Mercado">
           <p class="nav-label">MERCADO</p>
           <mat-nav-list>

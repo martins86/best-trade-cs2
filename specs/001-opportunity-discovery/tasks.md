@@ -68,7 +68,7 @@ description: "Task list for simulated opportunity discovery"
 ### Tests for User Story 2
 
 - [X] T015 [P] [US2] Escrever testes de cálculo para alocação de taxas por etapa, conversão individual para BRL, resultado, margem, ausência de arredondamento intermediário, arredondamento half-up a duas casas, dados inválidos/ausentes e custo zero em `frontend/src/app/features/opportunities/domain/opportunity-calculator.spec.ts`.
-- [ ] T016 [P] [US2] Escrever testes da apresentação detalhada para os dois sentidos, saldo Steam não sacável, resultado não lucrativo e sentido indisponível em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.spec.ts`.
+- [X] T016 [P] [US2] Escrever testes da apresentação detalhada para os dois sentidos, saldo Steam não sacável, resultado não lucrativo e sentido indisponível em `frontend/src/app/features/opportunities/pages/opportunity-detail.page.spec.ts`.
 
 ### Implementation for User Story 2
 

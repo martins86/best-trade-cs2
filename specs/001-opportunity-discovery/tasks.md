@@ -107,7 +107,7 @@ description: "Task list for simulated opportunity discovery"
 - [X] T024 [P] Refinar acessibilidade e layout responsivo em `frontend/src/app/features/opportunities/pages/opportunity-list.page.scss`, `frontend/src/app/features/opportunities/pages/opportunity-detail.page.scss`, `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.html` e `frontend/src/app/features/opportunities/ui/opportunity-filter-bar/opportunity-filter-bar.component.scss`, cobrindo teclado, foco, rótulos, contraste e viewports móvel/tablet/desktop.
 - [X] T025 Implementar medição Playwright da atualização de filtros/ordenação para até 200 cenários e validar p95 de até 200 ms em 30 execuções, sem rede, em `frontend/e2e/opportunity-performance.spec.ts` (depende de T014, T022 e T024).
 - [X] T026 Atualizar e executar os comandos e cenários de aceitação em `specs/001-opportunity-discovery/quickstart.md`, registrando apenas instruções que funcionem com os scripts efetivamente configurados em `frontend/package.json` (depende de T023–T025).
-- [ ] T027 Conduzir avaliação sem orientação com cinco participantes para a tarefa de filtros e registrar somente quantidade de sucessos e tempos, sem dados pessoais, em `specs/001-opportunity-discovery/quickstart.md`; o critério é pelo menos quatro conclusões em até dois minutos (depende de T026).
+- [ ] T027 — Adiada para etapa posterior por decisão do projeto: conduzir avaliação sem orientação com cinco participantes para a tarefa de filtros e registrar somente quantidade de sucessos e tempos, sem dados pessoais, em `specs/001-opportunity-discovery/quickstart.md`; o critério continua sendo pelo menos quatro conclusões em até dois minutos (depende de T026).
 
 ---
 

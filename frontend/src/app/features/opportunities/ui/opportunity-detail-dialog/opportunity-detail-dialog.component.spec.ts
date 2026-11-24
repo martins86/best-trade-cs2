@@ -26,7 +26,7 @@ describe('OpportunityDetailDialogComponent', () => {
     expect(component.data.skinName).toBe('AK-47 simulada');
     expect(component.data.scenario.direction).toBe('csfloat-to-steam');
     expect(fixture.nativeElement.querySelector('button[aria-label="Fechar detalhes"]')).not.toBeNull();
-    component.close();
+    fixture.nativeElement.querySelector('button[aria-label="Fechar detalhes"]').click();
     expect(close).toHaveBeenCalledOnce();
   });
 

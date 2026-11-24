@@ -22,4 +22,17 @@ describe('ThemeService', () => {
     const service = TestBed.inject(ThemeService);
     expect(service.theme()).toBe('dark');
   });
+
+  it('restaura tema claro salvo e alterna de volta para escuro', () => {
+    localStorage.setItem('cs2mm-theme', 'light');
+    TestBed.configureTestingModule({ providers: [ThemeService] });
+    const service = TestBed.inject(ThemeService);
+
+    expect(service.theme()).toBe('light');
+    expect(document.documentElement.dataset['theme']).toBe('light');
+    service.toggle();
+
+    expect(service.theme()).toBe('dark');
+    expect(localStorage.getItem('cs2mm-theme')).toBe('dark');
+  });
 });

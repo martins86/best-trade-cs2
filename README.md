@@ -120,7 +120,7 @@ cd frontend
 npm test
 ```
 
-O projeto usa Vitest por meio do builder do Angular.
+O projeto usa Vitest por meio do builder do Angular. A execução exige cobertura global mínima de 95% em statements, branches, functions e lines; o comando falha quando qualquer métrica fica abaixo do limite. O mesmo comando é executado pelo job de testes unitários do CI.
 
 ### Testes end-to-end
 

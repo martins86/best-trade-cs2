@@ -15,7 +15,14 @@ describe('OpportunityTableComponent', () => {
     const component = new OpportunityTableComponent();
     expect(component.statusLabel('stale')).toBe('Desatualizada');
     expect(component.statusLabel('not-equivalent')).toBe('Não equivalente');
+    expect(component.statusLabel('incomplete')).toBe('Incompleta');
     expect(component.money(scenario('incomplete').costBasisBrl)).toBe('0.00');
+    expect(component.decimal('').toString()).toBe('0');
+    expect(component.abs('-5')).toBe('5');
+    expect(component.directionLabel('steam-to-csfloat')).toBe('Steam → CSFloat');
+    expect(component.liquidityLabel('medium')).toBe('Média');
+    expect(component.liquidityLabel('low')).toBe('Baixa');
+    expect(component.detailLabel(scenario('valid'))).toBe('Ver detalhes de skin simulada');
   });
 
   it('representa crédito Steam separadamente em cenário válido', () => {
@@ -59,5 +66,21 @@ describe('OpportunityTableComponent', () => {
     expect(button).not.toBeNull();
     expect(button.querySelector('mat-icon')?.textContent?.trim()).toBe('visibility');
     expect(button.textContent).not.toContain('Detalhes');
+    button.click();
+  });
+
+  it('renderiza cenários com liquidez média e baixa e margem indisponível', () => {
+    TestBed.configureTestingModule({ imports: [OpportunityTableComponent] });
+    const fixture = TestBed.createComponent(OpportunityTableComponent);
+    fixture.componentInstance.scenarios = [
+      { ...scenario('valid'), direction: 'steam-to-csfloat', liquidityCategory: 'medium', marginPercent: '' },
+      { ...scenario('incomplete'), liquidityCategory: 'low' },
+    ];
+    fixture.detectChanges();
+
+    const text = fixture.nativeElement.textContent as string;
+    expect(text).toContain('Média');
+    expect(text).toContain('Baixa');
+    expect(text).toContain('Indisponível');
   });
 });
